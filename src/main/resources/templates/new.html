@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Title</title>
+    <style>
+        div {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .mainContainer {
+            background-color: #80deea;
+            backface-visibility: hidden;
+        }
+        .top {
+            margin-bottom: 100px;
+        }
+        body {
+            background-color: #eceff1;
+        }
+    </style>
+</head>
+<body>
+
+<p class="top"></p>
+<div class="col-8 container mainContainer">
+    <form class="row g-3" th:method="post" th:action="@{/new}" th:object="${person}">
+        <div class="row justify-content-between container">
+            <div class="col-md-5">
+                <label for="firstName" class="form-label">First name</label>
+                <input type="text" class="form-control" th:field="*{firstName}" id="firstName" value="Mark" required>
+            </div>
+            <div class="col-md-5">
+                <label for="lastName" class="form-label">Last name</label>
+                <input type="text" class="form-control" th:field="*{lastName}" id="lastName" value="Otto" required>
+            </div>
+        </div>
+
+        <div class="row justify-content-between container">
+            <div class="col-md-3 form-group">
+                <label for="date">Date</label>
+                <input type="date" name="date" th:field="*{date}" id="date" class="form-control">
+            </div>
+
+            <div class="col-md-5 form-group">
+                <label for="region">Enter region: </label>
+                <input type="text" th:field="*{region}" placeholder="Region" class="form-control" id="region">
+<!--                -->
+<!--                <label for="region" class="form-label">Region</label>-->
+<!--                -->
+<!--                <select class="form-select" th:field=" **{region}" id="region" required>-->
+<!--                    <option selected disabled value="'toshkentsh'" th:text="Toshkent sh">Toshkent sh</option>-->
+<!--                    <option value="'andijon'" th:text="Andijon viloyati">Andijon viloyati</option>-->
+<!--                    <option value="'fargona'" th:text="Farg'ona viloyati">Farg'ona viloyati</option>-->
+<!--                    <option value="'namangan'" th:text="Namangan viloyati">Namangan viloyati</option>-->
+<!--                    <option value="toshkentv" th:text="Toshkent viloyati">Toshkent viloyati</option>-->
+<!--                    <option value="sirdaryo" th:text="Sirdaryo viloyati">Sirdaryo viloyati</option>-->
+<!--                    <option value="jizzax" th:text="Jizzax viloyati">Jizzax viloyati</option>-->
+<!--                    <option value="samarqand" th:text="Samarqand viloyati">Samarqand viloyati</option>-->
+<!--                    <option value="navoiy" th:text="Navoiy viloyati">Navoiy viloyati</option>-->
+<!--                    <option value="qashqadaryo" th:text="Qashqadaryo viloyati">Qashqadaryo viloyati</option>-->
+<!--                    <option value="surxondaryo" th:text="Surxondaryo viloyati">Surxondaryo viloyati</option>-->
+<!--                    <option value="buxoro" th:text="Buxoro viloyati">Buxoro viloyati</option>-->
+<!--                    <option value="xorazm" th:text="Xorazm viloyati">Xorazm viloyati</option>-->
+<!--                    <option value="qoraqalpogiston" th:text="Qoraqalpog'iston Respublikasi">Qoraqalpog'iston Respublikasi</option>-->
+<!--                </select>-->
+            </div>
+            <div class="col-md-3">
+                <label for="year" class="form-label">Age</label>
+                <input type="number" min="1" max="100" step="1" th:field="*{year}" value="18" class="form-control" id="year" required>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-3">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+<!--<form th:method="post" th:action="@{/people}" th:object="${user}">-->
+<!--    <h2>New user!</h2>-->
+<!--    <label for="firstName">Enter  First name of user : </label>-->
+<!--    <input type="text" name="firstName" placeholder="First name" id="firstName">-->
+
+<!--    <label for="lastName">Enter Last name off user: </label>-->
+<!--    <input type="text" th:field="*{firstName}" placeholder="Last name" id="lastName">-->
+
+<!--    <br>-->
+<!--    <br>-->
+
+<!--    <label for="date">Enter birth date: </label>-->
+<!--    <input type="text" th:field="*{lastName}" placeholder="Date" id="date">-->
+
+<!--    <label for="region">Enter region: </label>-->
+<!--    <input type="text" th:field="*{region}" placeholder="Region" id="region">-->
+
+<!--    <label for="year">Enter age: </label>-->
+<!--    <input type="text" th:field="*{year}" placeholder="Age" id="year">-->
+
+<!--    <br>-->
+<!--    <br>-->
+
+<!--    <button type="submit" style="background-color: blue">Add</button>-->
+<!--</form>-->
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>Title</title>
+    <style>
+        table{
+            width: 80%;
+            position: relative;
+            top: 20px;
+            left: 30px;
+            border: 2px grey solid;
+        }
+        th, td {
+
+            border: 2px grey solid;
+        }
+
+        .buttn {
+            position: relative;
+            top:20px;
+            left: 0px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body >
+<!--<div>-->
+<!--    <div th:each="el : ${person}">-->
+<!--        <p th:text="${el.getId()}">value</p>-->
+<!--        <p th:text="${el.getFirstName()}">value</p>-->
+<!--        <p th:text="${el.getLastName()}">value</p>-->
+<!--        <p th:text="${el.getDate()}">value</p>-->
+<!--        <p th:text="${el.getRegion()}">value</p>-->
+<!--        <p th:text="${el.getYear()}">value</p>-->
+
+<!--    </div>-->
+</div>
+<div  th:each="el : ${person}">
+    <h2>Information about user!</h2>
+    <table>
+        <tr style="justify-items: center">
+            <th>User id.</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date</th>
+            <th>Region</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td th:text="${el.getId()}">value</td>
+            <td th:text="${el.getFirstName()}">value</td>
+            <td th:text="${el.getLastName()}">value</td>
+            <td th:text="${el.getDate()}">value</td>
+            <td th:text="${el.getRegion()}">value</td>
+            <td th:text="${el.getYear()}">value</td>
+
+        </tr>
+
+    </table>
+    <div class="container buttn">
+        <div class="row">
+            <div class="col-2">
+                <a class="btn btn-primary" th:href="@{/edit/{id}(id=${el.getId()})}">Edit</a>
+            </div>
+            <div class="col-2">
+                <a class="btn btn-danger" th:href="@{/delete/{id}(id=${el.getId()})}">Delete</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>
